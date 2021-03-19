@@ -12,7 +12,6 @@ incorrect_letters = ""
 guess_count = 0
 total_guesses = 5
 
-
 print(f"Your word is: {hidden_answer}")
 print(f"You have {total_guesses} guesses")
 
@@ -23,8 +22,7 @@ while guess_count < total_guesses:
     elif total_guesses - guess_count == 1:
         print("You have 1 guess left!")
 
-    guess = input(f"""
-Guess a letter: """).lower()
+    guess = input(f"\nGuess a letter: ").lower()
 
     if len(guess) > 1:
         print("Please only guess one letter, dolt!")
@@ -37,14 +35,12 @@ Guess a letter: """).lower()
     elif guess not in answer_list:
         guess_count += 1
         incorrect_letters += guess
-        print(f"""
-Nope! You have {total_guesses - guess_count} guess left
-        """)
-    print("".join(hidden_list))
-    print(f"""
-Already guessed: {incorrect_letters}
+        print(f"\nNope! You have {total_guesses - guess_count} guess left")
 
---------------""")
+    print("".join(hidden_list))
+    print(f"\nAlready guessed: {incorrect_letters}\n\n--------------")
+
     if guess_count == total_guesses:
         print(f"You lose! The word was {answer}")
+
 print("Game over!")
